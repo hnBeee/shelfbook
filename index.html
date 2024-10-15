@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Impor script kamu di sini -->
+     <link rel="stylesheet" href="style.css">
+    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>ShelfBook</h1>
+    </header>
+    <main>
+      <section id="add-book">
+        <!-- <h2>Tambah Buku Baru</h2> -->
+        <form id="bookForm" data-testid="bookForm">
+          <div>
+            <label for="bookFormTitle">Title :</label>
+            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+          </div>
+          <div>
+            <label for="bookFormAuthor">Author :</label>
+            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+          </div>
+          <div>
+            <label for="bookFormYear">Year :</label>
+            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+          </div>
+          <div class="checkbox">
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+            />
+            <label for="bookFormIsComplete">Finish Reading</label>
+          </div>
+          <button class="add-book" id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+            Add Book
+          </button>
+        </form>
+      </section>
+
+      <div class="search-container">
+        <form id="searchBook" data-testid="searchBookForm">
+          <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" placeholder="Search Book.." class="search-input"/>
+          <button id="searchSubmit" data-testid="searchBookFormSubmitButton" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <section class="book-list">
+        <h3>Book List</h3>
+        <span id="bookCount">0 Book</span>
+      </section>
+
+      <section class="unfinished">
+        <h2>Unfinished</h2>
+        <hr>
+
+        <div id="incompleteBookList" data-testid="incompleteBookList">
+          <!-- 
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+          <div data-bookid="123123123" data-testid="bookItem" class="book-item">
+            <h3 data-testid="bookItemTitle">Book 1</h3>
+            <p data-testid="bookItemAuthor">Author : Penulis Buku 1</p>
+            <p data-testid="bookItemYear">Year : 2030</p>
+            <div class="book-action">
+              <button data-testid="bookItemIsCompleteButton">
+                <i class="fas fa-book-open"></i>
+              </button>
+              <button data-testid="bookItemEditButton">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button data-testid="bookItemDeleteButton">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="finished">
+        <h2>Finished</h2>
+        <hr>
+
+        <div id="completeBookList" data-testid="completeBookList">
+          <!-- 
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+          <div data-bookid="456456456" data-testid="bookItem" class="book-item">
+            <h3 data-testid="bookItemTitle">Book 2</h3>
+            <p data-testid="bookItemAuthor">Author : Penulis Buku 2</p>
+            <p data-testid="bookItemYear">Year : 2030</p>
+            <div class="book-action">
+              <button data-testid="bookItemIsCompleteButton">
+                <i class="fas fa-check"></i>
+              </button>
+              <button data-testid="bookItemEditButton">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button data-testid="bookItemDeleteButton">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast"</div>
+
+  </body>
+</html>
